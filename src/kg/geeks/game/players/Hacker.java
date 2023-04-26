@@ -2,8 +2,6 @@ package kg.geeks.game.players;
 
 import kg.geeks.game.general.RPG_Game;
 
-import java.util.Random;
-
 public class Hacker extends Hero {
     private int round = 1;
     public Hacker(int health, int damage, String name) {

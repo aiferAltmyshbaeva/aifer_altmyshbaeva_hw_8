@@ -2,8 +2,6 @@ package kg.geeks.game.players;
 
 import kg.geeks.game.general.RPG_Game;
 
-import java.util.Random;
-
 public class Boss extends GameEntity {
     private SuperAbility defence;
     private int stunnedRounds;
@@ -26,15 +24,11 @@ public class Boss extends GameEntity {
             stunnedRounds--;
             return;
         }
-        for (int i = 0; i < heroes.length; i++) {
-            if (heroes[i].getHealth() > 0) {
-                heroes[i].setHealth(heroes[i].getHealth() - this.getDamage());
+        for (Hero hero : heroes) {
+            if (hero.getHealth() > 0) {
+                hero.setHealth(hero.getHealth() - this.getDamage());
             }
         }
-    }
-
-    public int getStunnedRounds() {
-        return stunnedRounds;
     }
 
     public void setStunnedRounds(int stunnedRounds) {
